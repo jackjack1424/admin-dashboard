@@ -1,0 +1,153 @@
+employee {
+    flex: 4;
+    padding: 20px;
+  }
+  
+  .employeeTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+.employeeAddButton {
+width: 80px;
+border: none;
+padding: 5px;
+background-color: teal;
+border-radius: 5px;
+cursor: pointer;
+color: white;
+font-size: 16px;
+}
+
+.employeeContainer {
+display: flex;
+margin-top: 20px;
+}
+
+.employeeShow {
+flex: 1;
+padding: 20px;
+-webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.employeeUpdate {
+flex: 2;
+padding: 20px;
+-webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+margin-left: 20px;
+}
+
+.employeeShowTop {
+display: flex;
+align-items: center;
+}
+
+.employeeShowImg {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+.employeeShowTopTitle {
+display: flex;
+flex-direction: column;
+margin-left: 20px;
+}
+
+.employeeShowemployeename {
+font-weight: 600;
+}
+
+.employeeShowemployeeTitle {
+font-weight: 300;
+}
+
+.employeeShowBottom{
+  margin-top: 20px;
+}
+
+.employeeShowTitle {
+font-size: 14px;
+font-weight: 600;
+color: rgb(175, 170, 170);
+}
+
+.employeeShowInfo{
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  color: #444;
+}
+
+.employeeShowIcon{
+  font-size: 16px !important;
+}
+
+.employeeShowInfoTitle{
+  margin-left: 10px;
+}
+
+.employeeUpdateTitle{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.employeeUpdateForm{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.employeeUpdateItem{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.employeeUpdateItem>label{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.employeeUpdateInput{
+  border: none;
+  width: 250px;
+  height: 30px;
+  border-bottom: 1px solid gray;
+}
+
+.employeeUpdateRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.employeeUpdateUpload{
+  display: flex;
+  align-items: center;
+}
+
+.employeeUpdateImg{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.employeeUpdateIcon{
+  cursor: pointer;
+}
+
+.employeeUpdateButton{
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+}

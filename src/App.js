@@ -14,52 +14,59 @@ import NewEmployee from "./pages/newEmployee/NewEmployee";
 import Employee from "./pages/Employee/Employee";
 import "./pages/Payment/Payment";
 import { Payment } from "@material-ui/icons";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
-    <Router>
-      <Topbar />
-      <div className="container">
-        <Sidebar />
+    <>
+      <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/users">
-            <UserList />
-          </Route>
-          <Route path="/user/:userId">
-            <User />
-          </Route>
-          <Route path="/newUser">
-            <NewUser />
-          </Route>
-          <Route path="/products">
-            <ProductList />
-          </Route>
-          <Route path="/product/:productId">
-            <Product />
-          </Route>
-          <Route path="/newproduct">
-            <NewProduct />
-          </Route>
-         <Route path="/Employee">
-           <Employeelist/>
-         </Route>
-         <Route path="/NewEmployee">
-           <NewEmployee/>
-         </Route>
-         <Route path="/employee/:employeeId">
-           <Employee/>
-         </Route>
-         <Route path="payment/:paymentId">
-           <Payment/>
-         </Route>
-         
-         
-        </Switch>
-      </div>
-    </Router>
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/users">
+              <UserList />
+            </Route>
+            <Route path="/user/:userId">
+              <User />
+            </Route>
+            <Route path="/newUser">
+              <NewUser />
+            </Route>
+            <Route path="/products">
+              <ProductList />
+            </Route>
+            <Route path="/product/:productId">
+              <Product />
+            </Route>
+            <Route path="/newproduct">
+              <NewProduct />
+            </Route>
+            <Route path="/Employee">
+              <Employeelist />
+            </Route>
+            <Route path="/NewEmployee">
+              <NewEmployee />
+            </Route>
+            <Route path="/employee/:employeeId">
+              <Employee />
+            </Route>
+            <Route path="payment/:paymentId">
+              <Payment />
+            </Route>
+
+
+        </div>
+          </Switch>
+      </Router>
+
+    </>
   );
 }
 

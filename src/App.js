@@ -13,6 +13,7 @@ import Employeelist from "./pages/Employeelist/Employeelist";
 import NewEmployee from "./pages/newEmployee/NewEmployee";
 import Employee from "./pages/Employee/Employee";
 import "./pages/Payment/Payment";
+<<<<<<< HEAD
 import "./pages/login/login";
 import Payment from "./pages/Payment/Payment";
 import Login from "./pages/login/login";
@@ -68,6 +69,62 @@ function App() {
         </Switch>
       </div>
     </Router>
+=======
+import { Payment } from "@material-ui/icons";
+import Login from "./pages/login/Login";
+
+function App() {
+  return (
+    <>
+      <Router>
+        <Switch>
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/users">
+              <UserList />
+            </Route>
+            <Route path="/user/:userId">
+              <User />
+            </Route>
+            <Route path="/newUser">
+              <NewUser />
+            </Route>
+            <Route path="/products">
+              <ProductList />
+            </Route>
+            <Route path="/product/:productId">
+              <Product />
+            </Route>
+            <Route path="/newproduct">
+              <NewProduct />
+            </Route>
+            <Route path="/Employee">
+              <Employeelist />
+            </Route>
+            <Route path="/NewEmployee">
+              <NewEmployee />
+            </Route>
+            <Route path="/employee/:employeeId">
+              <Employee />
+            </Route>
+            <Route path="payment/:paymentId">
+              <Payment />
+            </Route>
+
+
+        </div>
+          </Switch>
+      </Router>
+
+    </>
+>>>>>>> dd6ad7f7db49da6a2b57539e4474c062638886ae
   );
 }
 

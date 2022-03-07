@@ -13,18 +13,24 @@ import Employeelist from "./pages/Employeelist/Employeelist";
 import NewEmployee from "./pages/newEmployee/NewEmployee";
 import Employee from "./pages/Employee/Employee";
 import "./pages/Payment/Payment";
-import { Payment } from "@material-ui/icons";
+import "./pages/login/login";
+import Payment from "./pages/Payment/Payment";
+import Login from "./pages/login/login";
 
 function App() {
   return (
     <Router>
-      <Topbar />
-      <div className="container">
-        <Sidebar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+    <Topbar />
+    <Route exact path="/">
+      <Login/>
+    </Route>
+    <div className="container">
+      <Sidebar />
+      <Switch>
+
+        <Route exact path="/">
+          <Home />
+        </Route>
           <Route path="/users">
             <UserList />
           </Route>
@@ -52,9 +58,11 @@ function App() {
          <Route path="/employee/:employeeId">
            <Employee/>
          </Route>
-         <Route path="payment/:paymentId">
-           <Payment/>
-         </Route>
+        <Route path="/Payment">
+        <Payment/>
+        </Route>
+
+         
          
          
         </Switch>

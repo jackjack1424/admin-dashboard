@@ -1,5 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-export default function payment() {
-  return <div>God,allah,waheguru,Bhagwan</div>;
+export default function Payment() {
+  return (
+    <div className="Payment">
+      Staff Payment 
+    </div>
+  )
 }
+

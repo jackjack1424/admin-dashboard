@@ -1,6 +1,5 @@
 import React from "react";
 import "./topbar.css";
-import { NotificationsNone, Language, Settings } from "@material-ui/icons";
 
 export default function Topbar() {
   return (
@@ -9,21 +8,10 @@ export default function Topbar() {
         <div className="topLeft">
           <span className="logo">GYM MANAGEMENT</span>
         </div>
-        <div className="topRight">
-          <div className="topbarIconContainer">
-            <NotificationsNone />
-            <span className="topIconBadge">2</span>
-          </div>
-          <div className="topbarIconContainer">
-            <Language />
-            <span className="topIconBadge">2</span>
-          </div>
-          <div className="topbarIconContainer">
-            <Settings />
-          </div>
-          <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+       
+          <img src="https://memes.co.in/memes/update/uploads/2021/12/InShot_20211209_222013681.jpg" alt="" className="topAvatar" />
         </div>
       </div>
-    </div>
+    
   );
 }

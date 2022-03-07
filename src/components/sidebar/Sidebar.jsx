@@ -74,7 +74,7 @@ export default function Sidebar() {
             </Link>
 
 
-
+             
             <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Packages
@@ -82,11 +82,12 @@ export default function Sidebar() {
             
             
            
-          
+            <Link to="/Payment" classname="link">
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
               Payment
-            </li>     
+            </li>    
+            </Link> 
 
 
             

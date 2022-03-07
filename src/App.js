@@ -1,8 +1,9 @@
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import "./App.css";
+import { useState, useEffect } from "react";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
@@ -13,118 +14,48 @@ import Employeelist from "./pages/Employeelist/Employeelist";
 import NewEmployee from "./pages/newEmployee/NewEmployee";
 import Employee from "./pages/Employee/Employee";
 import "./pages/Payment/Payment";
-<<<<<<< HEAD
-import "./pages/login/login";
-import Payment from "./pages/Payment/Payment";
+import { Payment } from "@material-ui/icons";
 import Login from "./pages/login/login";
 
 function App() {
-  return (
-    <Router>
-    <Topbar />
-    <Route exact path="/">
-      <Login/>
-    </Route>
-    <div className="container">
-      <Sidebar />
-      <Switch>
+  const { pathname } = useLocation();
+  console.log(pathname);
+  const [disable, setdisable] = useState(false);
+  const disabling = () => {
+    if ((pathname === "/login")) {
+      setdisable(true);
+    } else {
+      setdisable(false);
+    }
+  };
+  useEffect(() => {
+    {
+      disabling();
+    }
+  }, [pathname]);
 
-        <Route exact path="/">
-          <Home />
-        </Route>
-          <Route path="/users">
-            <UserList />
-          </Route>
-          <Route path="/user/:userId">
-            <User />
-          </Route>
-          <Route path="/newUser">
-            <NewUser />
-          </Route>
-          <Route path="/products">
-            <ProductList />
-          </Route>
-          <Route path="/product/:productId">
-            <Product />
-          </Route>
-          <Route path="/newproduct">
-            <NewProduct />
-          </Route>
-         <Route path="/Employee">
-           <Employeelist/>
-         </Route>
-         <Route path="/NewEmployee">
-           <NewEmployee/>
-         </Route>
-         <Route path="/employee/:employeeId">
-           <Employee/>
-         </Route>
-        <Route path="/Payment">
-        <Payment/>
-        </Route>
-
-         
-         
-         
-        </Switch>
-      </div>
-    </Router>
-=======
-import { Payment } from "@material-ui/icons";
-import Login from "./pages/login/Login";
-
-function App() {
   return (
     <>
-      <Router>
-        <Switch>
-        <Route exact path="/">
-          <Login />
-        </Route>
-        <Topbar />
-        <div className="container">
-          <Sidebar />
-            <Route path="/home">
-              <Home />
-            </Route>
-            <Route path="/users">
-              <UserList />
-            </Route>
-            <Route path="/user/:userId">
-              <User />
-            </Route>
-            <Route path="/newUser">
-              <NewUser />
-            </Route>
-            <Route path="/products">
-              <ProductList />
-            </Route>
-            <Route path="/product/:productId">
-              <Product />
-            </Route>
-            <Route path="/newproduct">
-              <NewProduct />
-            </Route>
-            <Route path="/Employee">
-              <Employeelist />
-            </Route>
-            <Route path="/NewEmployee">
-              <NewEmployee />
-            </Route>
-            <Route path="/employee/:employeeId">
-              <Employee />
-            </Route>
-            <Route path="payment/:paymentId">
-              <Payment />
-            </Route>
+      <Topbar />
+      <div className="container">
+        <div>{disable ? null : <Sidebar />}</div>
 
-
-        </div>
-          </Switch>
-      </Router>
-
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/user/:userId" element={<User />} />
+          <Route path="/newUser" element={<NewUser />} />
+          <Route path="/products" element={<ProductList />} />
+          <Route path="/product/:productId" element={<Product />} />
+          <Route path="/newproduct" element={<NewProduct />} />
+          <Route path="/Employee" element={<Employeelist />} />
+          <Route path="/NewEmployee" element={<NewEmployee />} />
+          <Route path="/employee/:employeeId" element={<Employee />} />
+          <Route path="payment/:paymentId" element={<Payment />} />
+        </Routes>
+      </div>
     </>
->>>>>>> dd6ad7f7db49da6a2b57539e4474c062638886ae
   );
 }
 

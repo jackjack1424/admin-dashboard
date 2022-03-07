@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="sideba" disabled>
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Admin</h3>
@@ -45,28 +45,26 @@ export default function Sidebar() {
               </li>
             </Link>
 
-<<<<<<< HEAD
 
-             
-            <li className="sidebarListItem">
-                <AttachMoney className="sidebarIcon" />
-                Packages
-              </li>
-            
-            
-           
-            <Link to="/Payment" classname="link">
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
-              Payment
-            </li>    
-            </Link> 
+              Packages
+            </li>
 
 
-            
-          
-            
-           
+
+            <Link to="/Payment" classname="link">
+              <li className="sidebarListItem">
+                <AttachMoney className="sidebarIcon" />
+                Payment
+              </li>
+            </Link>
+
+
+
+
+
+
 
 =======
             <li className="sidebarListItem">
@@ -78,7 +76,6 @@ export default function Sidebar() {
               <AttachMoney className="sidebarIcon" />
               Payment
             </li>
->>>>>>> dd6ad7f7db49da6a2b57539e4474c062638886ae
           </ul>
         </div>
       </div>

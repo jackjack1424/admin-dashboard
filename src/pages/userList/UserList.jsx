@@ -55,9 +55,6 @@ export default function UserList() {
               onClick={() => handleDelete(params.row.id)}
             />   
 
-             <Link to={"/newUser/" + params.row.id}>
-              <button className="userListEdit">Add</button>
-            </Link> 
           </>
            
 
@@ -69,6 +66,9 @@ export default function UserList() {
 
   return (
     <div className="userList">
+    <Link to={"/newUser/"}>
+     <button className="userListEdit">Add</button>
+   </Link> 
       <DataGrid
         rows={data}
         disableSelectionOnClick

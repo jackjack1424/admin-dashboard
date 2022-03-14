@@ -1,52 +1,64 @@
 import "./newUser.css";
 
 export default function NewUser() {
+  // request url= http://127.0.0.1:8000/admin/members/
   return (
     <div className="newUser">
       <h1 className="newUserTitle">New Member</h1>
-      <form className="newUserForm">
+      <form className="newUserForm" >
         <div className="newUserItem">
-          <label>Username</label>
-          <input type="text" placeholder="" />
+          <label>First Name</label>
+          <input type="text" placeholder="First Name" required />
         </div>
         <div className="newUserItem">
-          <label>Full Name</label>
-          <input type="text" placeholder="" />
+          <label>Last Name</label>
+          <input type="text" placeholder="Last Name" required />
         </div>
         <div className="newUserItem">
           <label>Email</label>
-          <input type="email" placeholder="" />
+          <input type="email" placeholder="Email" required />
+          
         </div>
         <div className="newUserItem">
           <label>Password</label>
-          <input type="password" placeholder="" />
+          <input type="password" placeholder="password" required />
+        
         </div>
+        
         <div className="newUserItem">
-          <label>Phone</label>
-          <input type="text" placeholder="" />
+          <label>Date of birth</label>
+          <input type="date" max={"2004-01-01"} required />
         </div>
+
         <div className="newUserItem">
           <label>Address</label>
-          <input type="text" placeholder="" />
+          <input type="text" placeholder="Address" required/>
         </div>
         <div className="newUserItem">
-          <label>Gender</label>
-          <div className="newUserGender">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" value="other" />
-            <label for="other">Other</label>
-          </div>
+          <label>State</label>
+          <input type="text" placeholder="State" required/>
         </div>
         <div className="newUserItem">
-          <label>Active</label>
-          <select className="newUserSelect" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
+          <label>Zip code</label>
+          <input type="number" placeholder="Zip code" min={"6"} max={"6"} required/>
         </div>
+        <div className="newUserItem">
+          <label>Primary Phone</label>
+          <input type="number" placeholder="primary phone" min={"10"} max={"10"} required/>
+        </div>
+        <div className="newUserItem">
+          <label>Additional Phone</label>
+          <input type="number" placeholder="additional phone" min={"10"} max={"10"} />
+        </div>
+        <div className="newUserItem">
+          <label>Emergency Contact Name</label>
+          <input type="text" placeholder="Emergency Contact Name"  required/>
+        </div>
+        <div className="newUserItem">
+          <label>Emergency Contact Phone</label>
+          <input type="number" placeholder="Emergency Contact Phone" min={"10"} max={"10"} required/>
+        </div>
+      
         <button className="newUserButton">Create</button>
       </form>
     </div>

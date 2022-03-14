@@ -59,45 +59,68 @@ export default function User() {
           <form className="userUpdateForm">
             <div className="userUpdateLeft">
               <div className="userUpdateItem">
-                <label>Username</label>
+                <label>First Name</label>
                 <input
                   type="text"
-                  placeholder=""
-                  className="userUpdateInput"
+                  placeholder="First Name"
+                  className="userUpdateInput" required
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Full Name</label>
+                <label>Last Name</label>
                 <input
                   type="text"
-                  placeholder=""
-                  className="userUpdateInput"
+                  placeholder="last Name"
+                  className="userUpdateInput" required
                 />
               </div>
               <div className="userUpdateItem">
                 <label>Email</label>
                 <input
-                  type="text"
-                  placeholder=""
-                  className="userUpdateInput"
+                  type="email"
+                  placeholder="email" className="userUpdateInput" required
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Phone</label>
-                <input
-                  type="text"
-                  placeholder=""
-                  className="userUpdateInput"
-                />
-              </div>
-              <div className="userUpdateItem">
-                <label>Address</label>
-                <input
-                  type="text"
-                  placeholder="Akhand Bharat"
-                  className="userUpdateInput"
-                />
-              </div>
+          <label>Password</label>
+          <input type="password" placeholder="password" className="userUpdateInput" required />
+        
+        </div>
+        
+        <div className="userUpdateItem">
+          <label>Date of birth</label>
+          <input type="date" max={"2004-01-01"} className="userUpdateInput" required />
+        </div>
+
+        <div className="userUpdateItem">
+          <label>Address</label>
+          <input type="text" placeholder="Address" className="userUpdateInput" required/>
+        </div>
+        <div className="userUpdateItem">
+          <label>State</label>
+          <input type="text" placeholder="State" className="userUpdateInput" required/>
+        </div>
+        <div className="userUpdateItem">
+          <label>Zip code</label>
+          <input type="number" placeholder="Zip code" min={"6"} max={"6"} className="userUpdateInput" required/>
+        </div>
+        <div className="userUpdateItem">
+          <label>Primary Phone</label>
+          <input type="number" placeholder="primary phone" min={"10"} max={"10"} className="userUpdateInput" required/>
+        </div>
+        <div className="userUpdateItem">
+          <label>Additional Phone</label>
+          <input type="number" placeholder="additional phone" min={"10"} max={"10"} className="userUpdateInput" />
+        </div>
+        <div className="userUpdateItem">
+          <label>Emergency Contact Name</label>
+          <input type="text" placeholder="Emergency Contact Name"  className="userUpdateInput" required/>
+        </div>
+        <div className="userUpdateItem">
+          <label>Emergency Contact Phone</label>
+          <input type="number" placeholder="Emergency Contact Phone" min={"10"} max={"10"} className="userUpdateInput" required/>
+        </div>
+      
             </div>
             <div className="userUpdateRight">
               <div className="userUpdateUpload">

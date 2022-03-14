@@ -23,7 +23,7 @@ function App() {
   console.log(pathname);
   const [disable, setdisable] = useState(false);
   const disabling = () => {
-    if ((pathname === "/login")) {
+    if ((pathname === "/login" || pathname==="/login/")) {
       setdisable(true);
     } else {
       setdisable(false);
@@ -38,12 +38,12 @@ function App() {
   return (
     <>
       <Topbar />
-      <div className="container">
+      <div className="container1">
         <div>{disable ? null : <Sidebar />}</div>
 
         <Routes>
-          <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/users" element={<UserList />} />
           <Route path="/user/:userId" element={<User />} />
           <Route path="/newUser" element={<NewUser />} />

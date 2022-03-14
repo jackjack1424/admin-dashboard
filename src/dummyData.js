@@ -110,11 +110,13 @@ export const userData = [
   
   export const packagesRows =[
     {
-      id:1,
-      username: "Premium",
-      avatar: "https://img.freepik.com/free-vector/premium-collection-badge-design_53876-63011.jpg?size=338&ext=jpg",
-      status: "available",
-      price : "12000"
+      id: 1,
+      name: "Premium Plan",
+      img:
+        "https://img.freepik.com/free-vector/golden-premium-text-effect_52683-36626.jpg",
+    
+      status: "active",
+      price: "Rs.6000",
     },
   ]
   

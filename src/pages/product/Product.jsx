@@ -43,7 +43,7 @@ export default function Product() {
           <form className="productForm">
               <div className="productFormLeft">
                   <label>Product Name</label>
-                  <input type="text" placeholder="Gym Shoes" />
+                  <input type="text" placeholder="" />
                   <label>In Stock</label>
                   <select name="inStock" id="idStock">
                       <option value="yes">Yes</option>

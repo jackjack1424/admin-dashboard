@@ -1,4 +1,3 @@
-
 import "./newEmployee.css";
 
 export default function NewEmployee() {

@@ -45,20 +45,20 @@ export default function Sidebar() {
               </li>
             </Link>
 
-
+           <Link to="/packages" classname="Link">
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
               Packages
             </li>
+            </Link>
 
 
-
-            <Link to="/Payment" classname="link">
+          
               <li className="sidebarListItem">
                 <AttachMoney className="sidebarIcon" />
                 Payment
               </li>
-            </Link>
+            
 
 
 
@@ -66,16 +66,7 @@ export default function Sidebar() {
 
 
 
-=======
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Packages
-            </li>
 
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Payment
-            </li>
           </ul>
         </div>
       </div>

@@ -13,9 +13,10 @@ import NewProduct from "./pages/newProduct/NewProduct";
 import Employeelist from "./pages/Employeelist/Employeelist";
 import NewEmployee from "./pages/newEmployee/NewEmployee";
 import Employee from "./pages/Employee/Employee";
-import "./pages/Payment/Payment";
-import { Payment } from "@material-ui/icons";
 import Login from "./pages/login/login";
+import PackageList from "./pages/packageList/PackageList";
+import Package from "./pages/package/Package";
+import NewPackage from "./pages/newPackage/NewPackage";
 
 function App() {
   const { pathname } = useLocation();
@@ -30,7 +31,7 @@ function App() {
   };
   useEffect(() => {
     {
-      disabling();
+     disabling();
     }
   }, [pathname]);
 
@@ -52,7 +53,10 @@ function App() {
           <Route path="/Employee" element={<Employeelist />} />
           <Route path="/NewEmployee" element={<NewEmployee />} />
           <Route path="/employee/:employeeId" element={<Employee />} />
-          <Route path="payment/:paymentId" element={<Payment />} />
+          <Route path="/packages" element={<PackageList/>} />
+          <Route path="/packages/:packageId" element={<Package/>} />
+          <Route path="/newPackage" element={<NewPackage/>} />
+
         </Routes>
       </div>
     </>

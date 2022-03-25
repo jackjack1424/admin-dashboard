@@ -17,7 +17,7 @@ import {
          
         </div>
         <div className="packageContainer">
-          <div className="packageShow">
+          {/* <div className="packageShow">
             <div className="packageShowTop">
               <img
                 src="https://img.freepik.com/free-vector/golden-premium-text-effect_52683-36626.jpg"
@@ -53,7 +53,7 @@ import {
                 <span className="userShowInfoTitle">Akhand Bharat</span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="userUpdate">
             <span className="userUpdateTitle">Edit</span>
             <form className="userUpdateForm">
@@ -100,7 +100,7 @@ import {
                 </div>
               </div>
               <div className="userUpdateRight">
-                <div className="userUpdateUpload">
+                {/* <div className="userUpdateUpload">
                   <img
                     className="userUpdateImg"
                     src="https://varnam.my/wp-content/uploads/2021/01/FB_IMG_1605666747087-2.jpg"
@@ -110,7 +110,7 @@ import {
                     <Publish className="userUpdateIcon" />
                   </label>
                   <input type="file" id="file" style={{ display: "none" }} />
-                </div>
+                </div> */}
                 <button className="userUpdateButton">Update</button>
               </div>
             </form>

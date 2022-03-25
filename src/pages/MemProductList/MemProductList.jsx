@@ -1,16 +1,15 @@
-import "./packageList.css";
-import { DataGrid } from "@material-ui/data-grid";
-import { DeleteOutline } from "@material-ui/icons";
-import { packagesRows } from "../../dummyData";
+import "./MemProductList.css";
+
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import PackageComp from "./PackageComp";
+// import PackageComp from "./PackageComp";
+import MemProductComp from "./MemProductComp"
 
 export default function PackageList() {
   const [data, setData] = useState();
   const history = useNavigate();
-  const url = `http://127.0.0.1:8000/admin/membership_plans/`;
+  const url = `http://127.0.0.1:8000/admin/product/`;
   // const columns = [
   //   { field: "id", headerName: "ID", width: 90 },
   //   {
@@ -74,24 +73,24 @@ export default function PackageList() {
     fetchData();
   }, []);
   console.log("data in state",data);
-  const handleDelete = async (id) => {
-    const resp = await axios.delete(
-      `http://127.0.0.1:8000/admin/membership_plans/${id}`
-    );
-    console.log(resp.status);
-    const list = data.filter((post) => post.plan_id !== id);
-    setData(list);
-    history("/admin/packages");
-  };
+//   const handleDelete = async (id) => {
+//     const resp = await axios.delete(
+//       `http://127.0.0.1:8000/admin/membership_plans/${id}`
+//     );
+//     console.log(resp.status);
+//     const list = data.filter((post) => post.plan_id !== id);
+//     setData(list);
+//     history("/admin/packages");
+//   };
   return (
     <div className="productList">
-      <Link to={"/admin/newPackage/"}>
+      {/* <Link to={"/admin/newPackage/"}>
         <button className="productListEdit">Add</button>
-      </Link>
+      </Link> */}
       <div className="container">
       {data &&
           data.map((data) =>
-        <PackageComp key={data.plan_id} plan={data} handleDelete={handleDelete}/>)}
+        <MemProductComp key={data.product_id} product={data} />)}
       </div>
     </div>
   );

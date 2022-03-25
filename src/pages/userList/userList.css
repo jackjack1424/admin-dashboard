@@ -6,7 +6,12 @@
   display: flex;
   align-items: center;
 }
-
+.featured {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+}
 .userAddButton {
   width: 50px;
   border: none;

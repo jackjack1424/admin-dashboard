@@ -23,21 +23,29 @@ export default function NewProduct() {
     });
     console.log(data);
     e.preventDefault();
-    await axios({
-      method: "POST",
-      url: "http://127.0.0.1:8000/admin/product",
-      data: data,
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-      .then((response) => {
-        console.log(response.data);
-        alert("data inserted successfully")
+    try{
+
+      await axios({
+        method: "POST",
+        url: "http://127.0.0.1:8000/admin/product",
+        data: data,
+        headers: {
+          'Content-Type': 'application/json',
+        }
       })
-      .catch((err) => {
-        console.log("error", err);
-      });
+        .then((response) => {
+          console.log(response.data);
+          alert("data inserted successfully");
+          history('/admin/products')
+        }).catch(({ response }) => { 
+          console.log(response.data);  
+          alert(response.data.detail);
+          console.log(response.status);  
+          console.log(response.headers);  
+      })
+    }catch (err) {
+      console.log(`Error:${err.data}`);
+    }
   };
   const onchange = (e) => {
     setcredential({ ...credential, [e.target.name]: e.target.value });

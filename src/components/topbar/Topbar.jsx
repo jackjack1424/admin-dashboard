@@ -9,7 +9,7 @@ export default function Topbar() {
           <span className="logo">GYM MANAGEMENT</span>
         </div>
        
-          <img src="https://memes.co.in/memes/update/uploads/2021/12/InShot_20211209_222013681.jpg" alt="" className="topAvatar" />
+          {/* <img src="https://memes.co.in/memes/update/uploads/2021/12/InShot_20211209_222013681.jpg" alt="" className="topAvatar" /> */}
         </div>
       </div>
     

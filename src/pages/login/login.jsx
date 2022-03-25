@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {  useNavigate } from "react-router-dom";
 
@@ -26,7 +25,15 @@ export default function Login() {
     if (json.success) {
       // redirect
       localStorage.setItem('token',json.token);
-      history("/");
+      localStorage.setItem('user_type',json.user_type);
+      localStorage.setItem('user_id',json.user_id);
+      if (json.user_type==='employee'){
+        history("/admin");
+      }
+      else{
+
+        history("/member");
+      }
       console.log(localStorage)
     } else {
       alert('invalid credentials')
@@ -37,8 +44,9 @@ export default function Login() {
     setcredential({ ...credential, [e.target.name]: e.target.value });
   };
   return (
+
     <form
-      className=" col-md-6 col-md-offset-6"
+      className=" col-md-6 col-md-offset-6 "
       onSubmit={submitHandler}
     >
       <div className="mb-3 my-2">

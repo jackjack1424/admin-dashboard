@@ -14,12 +14,12 @@ import {
       <div className="employee">
         <div className="employeeTitleContainer">
           <h1 className="employeeTitle">Edit Employee</h1>
-          <Link to="/newEmployee">
+          {/* <Link to="/newEmployee">
             <button className="employeeAddButton">Add</button>
-          </Link>
+          </Link> */}
         </div>
         <div className="employeeContainer">
-          <div className="employeeShow">
+          {/* <div className="employeeShow">
             <div className="employeeShowTop">
               <img
                 src="https://varnam.my/wp-content/uploads/2021/01/FB_IMG_1605666747087-2.jpg"
@@ -55,7 +55,7 @@ import {
                 <span className="employeeShowInfoTitle">Akhand Bharat</span>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="employeeUpdate">
             <span className="employeeUpdateTitle">Edit</span>
             <form className="employeeUpdateForm">
@@ -147,7 +147,7 @@ import {
         </div>
               </div>
               <div className="employeeUpdateRight">
-                <div className="employeeUpdateUpload">
+                {/* <div className="employeeUpdateUpload">
                   <img
                     className="employeeUpdateImg"
                     src="https://varnam.my/wp-content/uploads/2021/01/FB_IMG_1605666747087-2.jpg"
@@ -157,7 +157,7 @@ import {
                     <Publish className="employeeUpdateIcon" />
                   </label>
                   <input type="file" id="file" style={{ display: "none" }} />
-                </div>
+                </div> */}
                 <button className="employeeUpdateButton">Update</button>
               </div>
             </form>

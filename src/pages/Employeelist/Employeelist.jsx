@@ -2,83 +2,53 @@ import "./Employeelist.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
 import { EmployeeRows } from "../../dummyData";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-
+import { Link,useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import axios from "axios";
+import EmpComp from "./EmpComp";
+ 
 export default function EmployeeList() {
-  const [data, setData] = useState(EmployeeRows);
+  const history = useNavigate()
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+  const [data, setData] = useState([]);
+  const url = `http://127.0.0.1:8000/admin/employees/`;
+
   
-  const columns = [
-    { field: "id", headerName: "ID", width: 90 },
-    {
-      field: "employee",
-      headerName: "Employee",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
-            {params.row.username}
-          </div>
-        );
-      },
-    },
-    { field: "email", headerName: "Email", width: 200 },
-    {
-      field: "status",
-      headerName: "Status",
-      width: 120,
-    },
-    {
-      field: "designation",
-      headerName: "Designation",
-      width: 160,
-    },
+  useEffect(() => {
     
+    const fetchData = async () => {
+      try{
+      const response = await axios.get(url);
+      console.log("response data", response.data);
+      setData(response.data);
+    } catch (err) {
+      console.log(`Error:${err.message}`);
+    }
+    };
+  fetchData();
+},[]);
+console.log("Data in state", data);
 
 
-    {
-      field: "action",
-      headerName: "Action",
-      width: 150,
-      renderCell: (params) => {
-        return (
-      
-      
-
-          <>
-            <Link to={"/employee/" + params.row.id}>
-              <button className="employeeListEdit">Edit</button>
-            </Link>
-
-          
-            <DeleteOutline
-              className="employeeListDelete"
-              onClick={() => handleDelete(params.row.id)}
-            />
-            
-          </>
-        );
-      },
-    },
-  ];
-
+const handleDelete=async (id)=>{
+  const resp= await axios.delete(`http://127.0.0.1:8000/admin/employees/${id}`)
+  console.log(resp.status);
+  const list = data.filter(post => post.employee_id !== id);
+  setData(list);
+  history('/admin/Employee')
+}
   return (
     <div className="userList">
-      <Link to={"/newEmployee/"}>
+      <Link to={"/admin/newEmployee/"}>
         <button className="employeeListEdit">Add</button>
       </Link>
-      <DataGrid
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={8}
-        checkboxSelection
-      />
+      <div className="container">
+        
+      {data &&
+        data.map((data) => (
+          <EmpComp key={data.employee_id} emp={data}  handleDelete={handleDelete} />
+        ))}{" "}
+      </div>
     </div>
   );
 }

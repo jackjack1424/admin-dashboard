@@ -1,10 +1,5 @@
-.employeeList {
+.productList{
   flex: 4;
-}
-
-.employeeListemployee {
-  display: flex;
-  align-items: center;
 }
 .featured {
   width: 100%;
@@ -23,7 +18,12 @@
 -moz-box-shadow: 45px 32px 51px -33px rgba(4, 1, 7, 0.73);
 }
 
-.employeeListImg {
+.productListItem{
+  display: flex;
+  align-items: center;
+}
+
+.productListImg {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -31,18 +31,17 @@
   margin-right: 10px;
 }
 
-.employeeListEdit{
-    border: none;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: #3bb077;
-    color: white;
-    cursor: pointer;
-    margin-right: 20px;
+.productListEdit{
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
-.employeeListDelete{
-    color: red;
-    cursor: pointer;
+.productListDelete{
+  color: red;
+  cursor: pointer;
 }
-

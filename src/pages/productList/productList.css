@@ -1,7 +1,23 @@
 .productList{
     flex: 4;
 }
-
+.featured {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
+  }
+.featuredItem {
+    flex: 1;
+    margin: 0px 20px;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 45px 32px 51px -33px rgba(2, 0, 3, 0.73);
+  -webkit-box-shadow: 45px 32px 51px -33px rgba(9, 0, 15, 0.73);
+  -moz-box-shadow: 45px 32px 51px -33px rgba(4, 1, 7, 0.73);
+  }
+  
 .productListItem{
     display: flex;
     align-items: center;

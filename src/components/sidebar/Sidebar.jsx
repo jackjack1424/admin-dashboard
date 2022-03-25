@@ -5,71 +5,31 @@ import {
   Storefront,
   AttachMoney,
 } from "@material-ui/icons";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AdminSide from "./AdminSide";
+import MemberSide from "./MemberSide";
 
 export default function Sidebar() {
+  const [disable, setdisable] = useState(false);
+  const user_type = localStorage.getItem("user_type");
+  console.log(user_type);
+  const disabling = () => {
+    if (( user_type=== "member")) {
+      setdisable(true);
+    } else {
+      setdisable(false);
+    }
+  };
+  useEffect(() => {
+    {
+     disabling();
+    }
+  }, [user_type]);
+
   return (
-    <div className="sideba" disabled>
-      <div className="sidebarWrapper">
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Admin</h3>
-          <ul className="sidebarList">
-            <Link to="/" className="link">
-              <li className="sidebarListItem active">
-                <LineStyle className="sidebarIcon" />
-                Dashboard
-              </li>
-            </Link>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
-          <ul className="sidebarList">
-            <Link to="/users" className="link">
-              <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Members
-              </li>
-            </Link>
-            <Link to="/employee" className="link">
-              <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Employees
-              </li>
-            </Link>
-
-            <Link to="/products" className="link">
-              <li className="sidebarListItem">
-                <Storefront className="sidebarIcon" />
-                Products
-              </li>
-            </Link>
-
-           <Link to="/packages" classname="Link">
-            <li className="sidebarListItem">
-              <AttachMoney className="sidebarIcon" />
-              Packages
-            </li>
-            </Link>
-
-
-          
-              <li className="sidebarListItem">
-                <AttachMoney className="sidebarIcon" />
-                Payment
-              </li>
-            
-
-
-
-
-
-
-
-
-          </ul>
-        </div>
-      </div>
-    </div>
+    <>
+      {disable ? <MemberSide/> :<AdminSide />}
+    </>
   );
 }

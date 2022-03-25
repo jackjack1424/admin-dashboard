@@ -17,7 +17,7 @@ export default function User() {
        
       </div>
       <div className="userContainer">
-        <div className="userShow">
+        {/* <div className="userShow">
           <div className="userShowTop">
             <img
               src="https://varnam.my/wp-content/uploads/2021/01/FB_IMG_1605666747087-2.jpg"
@@ -53,7 +53,7 @@ export default function User() {
               <span className="userShowInfoTitle">Akhand Bharat</span>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="userUpdate">
           <span className="userUpdateTitle">Edit</span>
           <form className="userUpdateForm">
@@ -123,7 +123,7 @@ export default function User() {
       
             </div>
             <div className="userUpdateRight">
-              <div className="userUpdateUpload">
+              {/* <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
                   src="https://varnam.my/wp-content/uploads/2021/01/FB_IMG_1605666747087-2.jpg"
@@ -133,7 +133,7 @@ export default function User() {
                   <Publish className="userUpdateIcon" />
                 </label>
                 <input type="file" id="file" style={{ display: "none" }} />
-              </div>
+              </div> */}
               <button className="userUpdateButton">Update</button>
             </div>
           </form>
